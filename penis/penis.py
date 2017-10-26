@@ -9,10 +9,12 @@ class Penis:
         self.bot = bot
 
     @commands.command()
-    async def penis(self, *, user : discord.Member):
+    async def penis(self, *, user: discord.Member=None):
         """Detects user's penis length
 
         This is 100% accurate."""
+        if not user:
+            user = ctx.message.author
         state = random.getstate()
         random.seed(user.id)
         dong = "8{}D".format("=" * random.randint(0, 30))
