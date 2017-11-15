@@ -126,7 +126,7 @@ class Cleverbot():
         channel = message.channel
 
         if message.author.id != self.bot.user.id:
-            to_strip = "@" + author.server.me.display_name + " "
+            to_strip = bot.user.mention + " "
             text = message.clean_content
             if not text.startswith(to_strip):
                 return
